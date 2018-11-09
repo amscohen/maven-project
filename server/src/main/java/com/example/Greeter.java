@@ -12,16 +12,18 @@ public class Greeter {
 
   }
 
-  public String greet(String someone) throws Exception {
+  public String greet(String someone) {
     return greet(someone, 0);
   }
 
   //TODO: Add javadoc comment
-  public String greet(String someone, int iterations) throws Exception {
+  public String greet(String someone, int iterations) {
     for (int i=0;i<iterations;i++){
         int sleepMS = i*i;
         System.out.println("Iteration " + i + ". Sleeping for " + sleepMS + " MS.");
-        Thread.sleep(sleepMS);
+        try{
+            Thread.sleep(sleepMS);
+        } 
     }
     return String.format("Hello, %s!", someone);
   }
