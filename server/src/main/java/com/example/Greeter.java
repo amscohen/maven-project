@@ -21,6 +21,7 @@ public class Greeter {
     for (int i=0;i<iterations;i++){
         int sleepMS = i*i;
         System.out.println("Iteration " + i + ". Sleeping for " + sleepMS + " MS.");
+        Thread.sleep(slepMS);
     }
     return String.format("Hello, %s!", someone);
   }
