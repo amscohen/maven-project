@@ -1,0 +1,13 @@
+#!/bin/bash
+TD_PID=`ps -eaf | grep getThreadDump | awk -F' ' '{print $2}'`
+
+if [[ -z "$TD_PID" ]]; then
+    echo "could not find TD Script running"
+    exit -1
+fi
+
+echo TD PIDs $TD_PID
+for pid in $TD_PID; do
+   echo killing script for PID $pid
+   kill -9 $pid
+done

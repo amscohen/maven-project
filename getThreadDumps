@@ -4,7 +4,7 @@ if [[ $# -ne 2 ]]; then
     exit -1
 fi
 
-SERVER_PID=`ps -eaf | grep surefire | awk -F' ' '{print $2}'`
+SERVER_PID=`ps -eaf | grep jenkins | awk -F' ' '{print $2}'`
 
 if [[ -z "$SERVER_PID" ]]; then
     echo "could not find surefire process"
@@ -17,7 +17,8 @@ while [ 0 -eq 0 ];
 do
     for pid in $SERVER_PID; do
         echo Getting thread dump for PID $pid
-        jstack -J-Xmx50m $pid >> $2
+        kill -3 $pid >> $2
+#        jstack -J-Xmx50m $pid >> $2
     done
     echo Sleeping $1 seconds
     sleep $1
