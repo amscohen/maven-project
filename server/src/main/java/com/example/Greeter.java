@@ -1,7 +1,7 @@
 package com.example;
 
 /**
- * This is a class. Adding some delays to have something to look at.
+ * This is a class. Adding some delays to have something to look at (even if it's just sleeps).
  */
 public class Greeter {
 
@@ -23,7 +23,8 @@ public class Greeter {
         System.out.println("Iteration " + i + ". Sleeping for " + sleepMS + " MS.");
         try{
             Thread.sleep(sleepMS);
-        } 
+        }
+        catch{} 
     }
     return String.format("Hello, %s!", someone);
   }
