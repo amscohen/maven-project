@@ -4,7 +4,7 @@ if [[ $# -ne 2 ]]; then
     exit -1
 fi
 
-SERVER_PID=`ps -eaf | grep jenkins | awk -F' ' '{print $2}'`
+SERVER_PID=`ps -eaf | grep jenkins | grep target | awk -F' ' '{print $2}'`
 
 if [[ -z "$SERVER_PID" ]]; then
     echo "could not find surefire process"
