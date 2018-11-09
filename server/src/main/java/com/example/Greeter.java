@@ -24,7 +24,7 @@ public class Greeter {
         try{
             Thread.sleep(sleepMS);
         }
-        catch{} 
+        catch(Exception e){} 
     }
     return String.format("Hello, %s!", someone);
   }
