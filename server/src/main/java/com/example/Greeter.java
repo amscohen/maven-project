@@ -1,7 +1,7 @@
 package com.example;
 
 /**
- * This is a class.
+ * This is a class. Adding some delays to have something to look at.
  */
 public class Greeter {
 
